@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Gratitude Log</h1>
+
+<a href="{% url 'gratitudes:createnew' %}">New</a>
+
+<br>
+<br>
+<br>
+
+{% for gratitude in gratitudes.all %}
+<div class="list-item">
+    I am grateful for {{ gratitude }} - {{gratitude.author}} on {{gratitude.date}}
+</div>
+{% endfor %}
+
+{% endblock %}

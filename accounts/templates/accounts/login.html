@@ -1,0 +1,15 @@
+Hello login page
+
+{% if error %}
+    {{ error }}
+{% endif %}
+<form method="POST" action="{% url 'accounts:login' %}">
+    {% csrf_token %}
+
+    {% if request.GET.next %}
+        <input type="hidden" name="next" value={{ request.GET.next }} />
+    {% endif %}
+    <input type="text" name="username" />
+    <input type="password" name="password" />
+    <button type="submit">Sign Up</button>
+</form>

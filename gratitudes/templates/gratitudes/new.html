@@ -1,0 +1,10 @@
+Today I am grateful for...
+
+{% if error %}
+    {{ error }}
+{% endif %}
+<form method="POST" action="{% url 'gratitudes:createnew' %}">
+    {% csrf_token %}
+    <input type="text" name="title" />
+    <button type="submit">Sign Up</button>
+</form>
