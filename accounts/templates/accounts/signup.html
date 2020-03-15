@@ -1,3 +1,11 @@
+{% extends 'base.html' %}
+
+
+
+
+
+{% block content %}
+
 Hello sign up page
 
 {% if error %}
@@ -10,3 +18,4 @@ Hello sign up page
     <input type="password" name="password2" />
     <button type="submit">Sign Up</button>
 </form> 
+{% endblock %}
