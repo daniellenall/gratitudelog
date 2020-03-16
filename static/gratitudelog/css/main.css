@@ -6,7 +6,8 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -26,9 +27,19 @@ a {
     color: #444;
     font-size: 0.9em;
 }
+
+.main {
+    padding: 35px 40px;
+    flex: 1 0 auto;
+    background-color: rgb(240, 240, 240);
+}
+
 .main-content {
- padding: 15px 25px;
- min-height: 85%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: #999 0px 10px  5px;
+    padding: 10px;
+    text-align: center;
 }
 
 .header-bar {
@@ -43,11 +54,17 @@ a {
 }
 
 .list-item {
-    border: 1px solid grey;
-    background-color: #d0d1d1;
-    border-radius: 5px;
-    margin-bottom: 5px;
+    border-bottom: 1px solid #999;
+    margin-bottom: 15px;
     padding: 10px;
+}
+
+.list-date {
+    font-size: 0.8em;
+}
+
+.list-author {
+    font-size: 0.8em;
 }
 
 .footer {
@@ -55,4 +72,5 @@ a {
     padding: 15px 25px;
     color: #FFF;
     width: 100%;
+    flex-shrink: 0;
 }

@@ -5,17 +5,20 @@
 
 
 {% block content %}
-<h1>Gratitude Log</h1>
 
-<a href="{% url 'gratitudes:createnew' %}">New</a>
+<a class="btn" href="{% url 'gratitudes:createnew' %}">New</a>
 
 <br>
 <br>
 <br>
-
-{% for gratitude in gratitudes.all %}
-<div class="list-item">
-    I am grateful for {{ gratitude }} - {{gratitude.author}} on {{gratitude.date}}
+<div class="main-content">
+    {% for gratitude in gratitudes.all %}
+    <div class="list-item">
+        <p class="list-title">I am grateful for {{ gratitude }}</p>
+        <p class="list-date">{{gratitude.date}}</p>
+        <p class="list-author">{{gratitude.author}}</p>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
+
 {% endblock %}
