@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro:300&display=swap');
+
 *, body {
     margin: 0px;
     padding: 0px;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     display: flex;
     flex-direction: column;
 }
@@ -13,6 +15,10 @@ body {
 a {
     color: #f7c73f;
     text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
 }
 
 .btn {
@@ -54,9 +60,26 @@ a {
 }
 
 .list-item {
-    border-bottom: 1px solid #999;
     margin-bottom: 15px;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-item-body {
+    width: 100%;
+    flex: 1 0 auto;
+}
+
+.list-item-two-col {
+    flex-basis: 50%;
+}
+
+.list-item-two-col:nth-child(odd) {
+    text-align: right;
+}
+.list-item-two-col:nth-child(even) {
+    text-align: left;
 }
 
 .list-date {
