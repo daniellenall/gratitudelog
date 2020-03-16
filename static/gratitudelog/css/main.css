@@ -16,17 +16,19 @@ a {
 
 .btn {
     background-color: #f7c73f;
-    color: #b38b1e;
+    color: #222 ;
     border: 1px #b38b1e solid;
     border-radius: 5px;
-    padding: 5px 15px;
+    padding: 10px 25px;
 }
 
 .description {
     color: #444;
+    font-size: 0.9em;
 }
 .main-content {
  padding: 15px 25px;
+ min-height: 85%;
 }
 
 .header-bar {
@@ -34,6 +36,10 @@ a {
     color: #222;
     width: 100%;
     padding: 15px 25px;
+}
+
+.header-bar  a {
+    color: #222;
 }
 
 .list-item {
@@ -48,7 +54,5 @@ a {
     background-color: #222;
     padding: 15px 25px;
     color: #FFF;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
