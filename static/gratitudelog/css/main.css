@@ -6,17 +6,49 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #d0d1d1;
+    background-color: #FFF;
+}
+
+a {
+    color: #f7c73f;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: #f7c73f;
+    color: #b38b1e;
+    border: 1px #b38b1e solid;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+.description {
+    color: #444;
+}
+.main-content {
+ padding: 15px 25px;
 }
 
 .header-bar {
-    background-color:#576a3d;
-    color: #FFF;
+    background-color:#f7c73f;
+    color: #222;
     width: 100%;
+    padding: 15px 25px;
 }
 
 .list-item {
     border: 1px solid grey;
+    background-color: #d0d1d1;
     border-radius: 5px;
     margin-bottom: 5px;
+    padding: 10px;
+}
+
+.footer {
+    background-color: #222;
+    padding: 15px 25px;
+    color: #FFF;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

@@ -15,11 +15,16 @@
 
         </nav>
     </header>
+    <section class="main-content">
+        {% block content %}
+        {% endblock %}
+
+    </section>
+ 
     
-    {% block content %}
-    {% endblock %}
-    
-    footer  
+    <footer class="footer">
+        <p>Made by <a href="https://www.daniellenall.com">Danielle</a> in the UK</p>
+    </footer>
     </body>
     
     
