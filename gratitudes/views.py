@@ -23,7 +23,8 @@ def createnew(request):
 def home(request):
 
     if request.user.is_authenticated:
-        gratitudes = Gratitude.objects.order_by('date')
+        logged_in_user = request.user
+        gratitudes = Gratitude.objects.filter(author=logged_in_user)
     else:
         return render(request, 'accounts/login.html')
 

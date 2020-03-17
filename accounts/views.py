@@ -30,7 +30,7 @@ def loginview(request):
             if 'next' in request.POST:
                 return redirect(request.POST['next'])
 
-            return render(request, 'accounts/login.html', {'error': 'Success!'})
+            return redirect('home')
         
         else:
             return render(request, 'accounts/login.html', {'error': 'Please enter valid login details'})
