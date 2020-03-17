@@ -13,15 +13,21 @@
 <br>
 <div class="main-content">
     <h2>My Gratitudes</h2>
+
+
     {% for gratitude in gratitudes.all %}
     
-    <div class="list-item">
-        <p class="list-title list-item-body">I am grateful that  {{ gratitude }}</p>
-        <p class="list-date list-item-two-col">{{gratitude.date}}</p>
-        <p class="list-author list-item-two-col">{{gratitude.author}}</p>
-    </div>
+        <div class="list-item">
+            <p class="list-title list-item-body">I am grateful that  {{ gratitude }}</p>
+            <p class="list-date list-item-two-col">{{gratitude.date}}</p>
+            <p class="list-author list-item-two-col">{{gratitude.author}}</p>
+            <form method="POST" action="{% url 'gratitudes:delete' gratitude.id %}">
+                {% csrf_token %}
+                <button class="btn" type="submit">Delete</button>
+            </form>
+        </div>
 
-    <hr />
+        <hr />
 
     {% endfor %}
 </div>

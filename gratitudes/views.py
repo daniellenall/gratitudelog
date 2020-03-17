@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate
 
@@ -20,8 +20,14 @@ def createnew(request):
     else:
         return render(request, 'gratitudes/new.html')
 
-def home(request):
+def delete(request, id):
+    item = get_object_or_404(Gratitude, id=id)
+    if request.method == "POST":
+        item.delete()
+        return redirect('home')
 
+
+def home(request):
     if request.user.is_authenticated:
         logged_in_user = request.user
         gratitudes = Gratitude.objects.filter(author=logged_in_user)
