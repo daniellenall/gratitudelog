@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate
+
 from django.utils import timezone
 from .models import Gratitude
 
@@ -19,5 +21,10 @@ def createnew(request):
         return render(request, 'gratitudes/new.html')
 
 def home(request):
-    gratitudes = Gratitude.objects.order_by('date')
+
+    if request.user.is_authenticated:
+        gratitudes = Gratitude.objects.order_by('date')
+    else:
+        return render(request, 'accounts/login.html')
+
     return render(request, 'gratitudes/home.html', {'gratitudes': gratitudes})
