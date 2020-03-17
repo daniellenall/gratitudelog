@@ -19,6 +19,18 @@ a {
 
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+}
+input[type=text], input[type=password]  {
+    border: 1px solid #000;
+    margin-bottom: 15px;
+    display: block;
+    width: 95%;
+    margin-right: 2.5px;
+    margin-left: 2.5%; 
+    padding: 10px;
+    background-color: #FFF; 
+    border-radius: 5px;
 }
 
 .btn {
@@ -32,6 +44,7 @@ h1, h2, h3, h4 {
 .description {
     color: #444;
     font-size: 0.9em;
+    margin-bottom: 15px;
 }
 
 .main {
@@ -42,7 +55,7 @@ h1, h2, h3, h4 {
 
 .main-content {
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: #999 0px 10px  5px;
     padding: 10px;
     text-align: center;

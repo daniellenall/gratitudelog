@@ -5,20 +5,27 @@
 
 
 {% block content %}
-Hello login page
 
-{% if error %}
-    {{ error }}
-{% endif %}
-<form method="POST" action="{% url 'accounts:login' %}">
-    {% csrf_token %}
+<div class="main-content">
+    <h2>Login</h2>
+    <form method="POST" action="{% url 'accounts:login' %}">
+        {% csrf_token %}
+    
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value={{ request.GET.next }} />
+        {% endif %}
+        <input type="text" name="username" />
+        <input type="password" name="password" />
 
-    {% if request.GET.next %}
-        <input type="hidden" name="next" value={{ request.GET.next }} />
-    {% endif %}
-    <input type="text" name="username" />
-    <input type="password" name="password" />
-    <button type="submit">Sign Up</button>
-</form>
+
+        {% if error %}
+            <p class="description">{{ error }}</p>
+        {% endif %}
+
+
+        <button class="btn" type="submit">Sign Up</button>
+    </form>
+    
+</div>
 
 {% endblock %}

@@ -6,16 +6,21 @@
 
 {% block content %}
 
-Hello sign up page
+<div class="main-content">
+<h2>Sign up</h2>
 
-{% if error %}
-    {{ error }}
-{% endif %}
 <form method="POST" action="{% url 'accounts:signup' %}">
     {% csrf_token %}
+    <h3>Username</h3>
     <input type="text" name="username" />
+    <h3>Password</h3>
     <input type="password" name="password1" />
+    <h3>Confirm Password</h3>
     <input type="password" name="password2" />
+    {% if error %}
+        <p class="description">{{ error }}</p>
+    {% endif %}
     <button type="submit">Sign Up</button>
 </form> 
+</div>
 {% endblock %}
