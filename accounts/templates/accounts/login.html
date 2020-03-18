@@ -22,8 +22,8 @@
             <p class="description">{{ error }}</p>
         {% endif %}
 
-
-        <button class="btn" type="submit">Sign Up</button>
+        <p>New here? <a href="{% url 'accounts:signup' %}">Sign up</a></p>
+        <button class="btn" type="submit">Login</button>
     </form>
     
 </div>
