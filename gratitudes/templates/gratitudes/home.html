@@ -6,14 +6,9 @@
 
 {% block content %}
 
-<a class="btn" href="{% url 'gratitudes:createnew' %}">New</a>
-
-<br>
-<br>
-<br>
 <div class="main-content">
     <h2>My Gratitudes</h2>
-
+    <a class="btn" href="{% url 'gratitudes:createnew' %}">New</a>
 
     {% for gratitude in gratitudes.all %}
     
@@ -23,11 +18,9 @@
             <p class="list-author list-item-two-col">{{gratitude.author}}</p>
             <form method="POST" action="{% url 'gratitudes:delete' gratitude.id %}">
                 {% csrf_token %}
-                <button class="btn" type="submit">Delete</button>
+                <button type="submit">Delete</button>
             </form>
         </div>
-
-        <hr />
 
     {% endfor %}
 </div>

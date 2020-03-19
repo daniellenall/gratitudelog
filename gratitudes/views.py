@@ -32,6 +32,6 @@ def home(request):
         logged_in_user = request.user
         gratitudes = Gratitude.objects.filter(author=logged_in_user)
     else:
-        return render(request, 'accounts/login.html')
+        return render(request, 'gratitudes/landing.html')
 
     return render(request, 'gratitudes/home.html', {'gratitudes': gratitudes})
